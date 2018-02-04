@@ -7,7 +7,7 @@
     $.fn.maxlength = function (options){
         var settings = $.extend(
             {},
-            $.fn.valLength.defaults,
+            $.fn.maxlength.defaults,
             options
         );
 
