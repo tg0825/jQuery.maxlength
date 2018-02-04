@@ -1,10 +1,10 @@
 (function($){
     /**
-     * 글자 수 표시
+     * 최대 글자 수, 현재 글자 수 표시
      * @param {Object} options 옵션
      * @return {Object} jQuery Object this;
      */
-    $.fn.valLength = function (options){
+    $.fn.maxlength = function (options){
         var settings = $.extend(
             {},
             $.fn.valLength.defaults,

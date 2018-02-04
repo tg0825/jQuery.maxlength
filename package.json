@@ -3,7 +3,7 @@
   "filename": "jQuery.maxlength.js",
   "main": "jQuery.maxlength.js",
   "version": "0.0.1",
-  "homepage": "https://doersguild.github.io/jQuery.print/",
+  "homepage": "https://tg0825.github.io/jQuery.maxlength/",
   "authors": [
     "tg0825 <tg0825@gmail.com>"
   ],
@@ -20,6 +20,6 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/DoersGuild/jQuery.print.git"
+    "url": "git://github.com/tg0825/jQuery.maxlength.git"
   },
 }
