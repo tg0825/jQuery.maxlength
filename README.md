@@ -9,5 +9,5 @@
 Use it like:
 
 ```js
-$("#myElementId").valLength(/*options*/);
+$("#myElementId").maxlength(/*options*/);
 ```
