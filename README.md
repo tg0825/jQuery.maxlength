@@ -3,11 +3,11 @@
 ## Usage
 
 ```html
-	<script type="text/JavaScript" src="path/to/jquery.maxlength.js" />
+<script type="text/JavaScript" src="path/to/jquery.maxlength.js" />
 ```
 	
 Use it like:
 
 ```js
-	$("#myElementId").valLength(/*options*/);
+$("#myElementId").valLength(/*options*/);
 ```
