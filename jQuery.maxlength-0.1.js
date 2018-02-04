@@ -35,7 +35,7 @@
         });
     };
 
-    $.fn.valLength.defaults = {
+    $.fn.maxlength.defaults = {
         valName: '[data-val-length=val]',
         target: '[data-val-length=target]',
         maxTarget: '[data-val-length=max]',
