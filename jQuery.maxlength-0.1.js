@@ -1,0 +1,44 @@
+(function($){
+    /**
+     * 글자 수 표시
+     * @param {Object} options 옵션
+     * @return {Object} jQuery Object this;
+     */
+    $.fn.valLength = function (options){
+        var settings = $.extend(
+            {},
+            $.fn.valLength.defaults,
+            options
+        );
+
+        var counterElm = '<span class="text-limit">' +
+            '<span data-val-length="target"></span>' +
+            '<span data-val-length="max"></span>' +
+            '</span>';
+
+        return this.each(function () {
+            var $wrap = $(this);
+            var $val = $wrap.find('[maxlength]');
+            var $parent = $wrap.find(settings.parent);
+            var maxLength = $val.attr('maxlength') || 'maxlength를 설정해주세요';
+
+            $parent.length ? $parent.append(counterElm) : $wrap.append(counterElm);
+            $wrap.find(settings.target).html($val.val().length);
+            $wrap.find(settings.maxTarget).html('/' + maxLength);
+
+            $wrap.on('keyup', settings.valName, function (e) {
+                var input = e.currentTarget;
+                var val = input.value;
+                if (val.length > maxLength) input.value = val.substr(0, maxLength);
+                $wrap.find(settings.target).html(input.value.length);
+            });
+        });
+    };
+
+    $.fn.valLength.defaults = {
+        valName: '[data-val-length=val]',
+        target: '[data-val-length=target]',
+        maxTarget: '[data-val-length=max]',
+        parent: '[data-val-length=parent]',
+    };
+})(jQuery);
