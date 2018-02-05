@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery.maxlength</title>
+    <script src="https://unpkg.com/jquery@1.12.4/dist/jquery.js"></script>
+    <script src="./jQuery.maxlength.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div>
+        <input
+            type="number"
+            maxlength="10"
+        >
+    </div>
+
+    <div>
+        <span
+            data-val-length="parent"
+        >
+        </span>
+        <input
+            type="text"
+            maxlength="20"
+        >
+    </div>
+
+    <div>
+        <textarea maxlength="50" name="" id="" cols="30" rows="10"></textarea>
+    </div>
+<script>
+$('div').maxlength();
+</script>
+</body>
+</html>

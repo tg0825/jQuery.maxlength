@@ -22,21 +22,23 @@
             var $parent = $wrap.find(settings.parent);
             var maxLength = $val.attr('maxlength') || 'maxlength를 설정해주세요';
 
-            $parent.length ? $parent.append(counterElm) : $wrap.append(counterElm);
-            $wrap.find(settings.target).html($val.val().length);
-            $wrap.find(settings.maxTarget).html('/' + maxLength);
+            if (!$wrap.find('.text-limit').length) {
+                $parent.length ? $parent.append(counterElm) : $wrap.append(counterElm);
+                $wrap.find(settings.target).html($val.val().length);
+                $wrap.find(settings.maxTarget).html('/' + maxLength);
 
-            $wrap.on('keyup', settings.valName, function (e) {
-                var input = e.currentTarget;
-                var val = input.value;
-                if (val.length > maxLength) input.value = val.substr(0, maxLength);
-                $wrap.find(settings.target).html(input.value.length);
-            });
+                $wrap.on('keyup', settings.valName, function (e) {
+                    var input = e.currentTarget;
+                    var val = input.value;
+                    if (val.length > maxLength) input.value = val.substr(0, maxLength);
+                    $wrap.find(settings.target).html(input.value.length);
+                });
+            }
         });
     };
 
     $.fn.maxlength.defaults = {
-        valName: '[data-val-length=val]',
+        valName: '[maxlength]',
         target: '[data-val-length=target]',
         maxTarget: '[data-val-length=max]',
         parent: '[data-val-length=parent]',
