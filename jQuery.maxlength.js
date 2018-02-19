@@ -23,8 +23,10 @@
             var maxLength = $val.attr('maxlength') || 'maxlength를 설정해주세요';
 
             if (!$wrap.find('.text-limit').length) {
+                var val = $val.val() || '';
+
                 $parent.length ? $parent.append(counterElm) : $wrap.append(counterElm);
-                $wrap.find(settings.target).html($val.val().length);
+                $wrap.find(settings.target).html(val.length);
                 $wrap.find(settings.maxTarget).html('/' + maxLength);
 
                 $wrap.on('keyup', settings.valName, function (e) {
